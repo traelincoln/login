@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      font-size: medium;
+      align-items: center;
+      min-height: 70vh;
+    }
+
+    img.site-banner {
+      display: block;
+      margin: auto;
+    }
+
+    nav {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      width: fit-content;
+      justify-content: space-evenly;
+    }
+
+    hr {
+      color: white;
+      margin-bottom: 1em;
+    }
+
+    form {
+      max-width: 60%;
+      min-width: 300px;
+      margin: 1em auto 0;
+      padding: 0;
+    }
+
+
+
+    #content {
+      padding: 0;
+      display: flexbox;
+      max-width: 50vw;
+      min-width: 330px;
+      background-color: rebeccapurple;
+      border-radius: 10px;
+    }
+
+    label.sr-only {
+      display: none;
+    }
+
+    p.feedback {
+      margin-bottom: 0;
+    }
+
+    button.nav-link {
+      color: white;
+    }
+
+    button.nav-link:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    button.nav-link.bg-light.active {
+      color: rebeccapurple;
+    }
+
+    h1 {
+      display: block;
+      max-width: 60%;
+      min-width: 300px;
+      color: rebeccapurple;
+      margin: auto;
+    }
+
+    p.copyright,
+    label[for='accept-terms'] {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <main id="content" class="text-center container p-3 mt-2 mb-2">
+    <div><img class="site-banner img-thumbnail mt-1" src="img/home.png" width="80" height="72" alt="site-banner">
+      <h1 class="text-center mt-2 rounded bg-light ">Harare in Hdr</h1>
+    </div>
+    <hr>
+    <nav class="nav nav-tabs m-1 mt-0">
+      <button class="nav-link" id="nav-login" data-for="#login">Login</button>
+      <button id="nav-register" class="nav-link" data-for="#register">Register</button>
+      <button id="nav-recover" class="nav-link" data-for="#recover">Recover</button>
+      <button id="nav-contact" class="nav-link" data-for="#contact">Contact</button>
+    </nav>
+    <div class="text-center m-1">
+      <form id="login" method="post" action="login">
+        <label class="sr-only" for="login-username">Username</label>
+        <input class="form-control" type="text" name="login-username" id="login-username" placeholder="Username"
+          required>
+        <p class="feedback"></p>
+        <label class="sr-only" for="login-password">Password</label>
+        <input class="form-control" type="password" name="login-password" id="login-password" placeholder="Password"
+          required>
+        <p class="feedback"></p>
+        <input class="btn btn-lg btn-secondary" type="submit" id="login-submit" value="Login">
+      </form>
+    </div>
+    <div class="text-center m-1">
+      <form id="register" method="get" action="register">
+        <label class="sr-only" for="fullname">Fullname</label>
+        <input class="form-control" type="text" id="fullname" name="fullname" placeholder="Fullname" required>
+        <p class="feedback bg-dark"></p>
+        <label class="sr-only" for="register-username">Username</label>
+        <input class="form-control" id="register-username" type="text" name="username" placeholder="Username" required>
+        <p class="feedback"></p>
+        <label class="sr-only" for="email">Email</label>
+        <input class="form-control" id="register-email" type="email" name="email" placeholder="Email Address" required>
+        <p class="feedback"></p>
+        <label class="sr-only" for="password">Password</label>
+        <input class="form-control" id="register-password" type="password" name="password" placeholder="Password"
+          required>
+        <p class="feedback"></p>
+        <label class="sr-only" for="confirm-password">Confirm password</label>
+        <input class="form-control" id="confirm-password" type="password" name="confirm-password"
+          placeholder="Confirm Password" required>
+        <p class="feedback"></p>
+        <label class="m-1" for="accept-terms"><input type="checkbox" id="accept-terms" name="accept-terms" required>
+          I accept
+          this website's terms of use and privacy policy.</label>
+        <input class="btn btn-lg btn-secondary" id="register-submit" type="submit" name="register-submit"
+          value="Register">
+      </form>
+    </div>
+    <div class="text-center m-1">
+      <form id="recover" method="get" action="recover">
+        <label class="sr-only" for="recovery-email">Recovery Email</label>
+        <input class="form-control" id="recovery-email" type="email" placeholder="Recovery email" required>
+        <p class="feedback"></p>
+        <input id="recover-submit" id="recover-submit" class="btn btn-lg btn-secondary" type="submit"
+          value="Recover Account">
+      </form>
+    </div>
+    <div class="text-center m-1">
+      <form id="contact" method="post" action="contact">
+        <label for="contact-name" class="sr-only">Fullname</label>
+        <input class="form-control" type="text" id="contact name" name="contact-name" placeholder="Fullname" autofocus
+          required>
+        <p class="feedback"></p>
+        <label class="sr-only" for="contact-email">Email address</label>
+        <input type="email" class="form-control" name="contact-email" id="contact-email" placeholder="Email address"
+          required>
+        <p class="feedback"></p>
+        <textarea class="form-control mb-2 " id="email-body" placeholder="Type your message here..."
+          required></textarea>
+        <p class="feedback"></p>
+        <input class="btn btn-lg btn-secondary" type="submit" id="send-email" value="Send">
+      </form>
+    </div>
+    <p class="copyright mt-2">&copy;Harare in HDR 2023</p>
+  </main>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(() => {
+      const forms = $("form");
+      forms.children("input[type=submit]").attr("disabled", "true")
+      forms.hide(20).each(
+        (index, form) => {
+          const formId = `#${form.id}`
+          const submitBtn = $(formId).children("input[type='submit']");
+          form.addEventListener("input", (e) => {
+            if (form.checkValidity()) {
+              submitBtn.removeClass("btn-secondary")
+              if (formId == "#register")
+                submitBtn.addClass("btn-warning")
+              else if (formId == "#login")
+                submitBtn.addClass("btn-success")
+              else submitBtn.addClass("btn-danger")
+              submitBtn[0, 0].disabled = false
+            }
+            else {
+              submitBtn.removeClass().addClass("btn btn-lg btn-secondary")
+              submitBtn[0, 0].disabled = true
+            }
+          })
+
+          link = $(`button[data-for~='${formId}']`)
+          link.on("click", (e) => {
+            $(formId).trigger("input");
+            e.preventDefault();
+            $(`#${e.target.id}`).toggleClass("bg-light active", true).siblings("button").toggleClass("bg-light active", false)
+            forms.not(formId).slideUp("slow")
+            forms.filter(formId).slideToggle('slow')
+          })
+        }
+      )
+
+      $('input.form-control').addClass("mb-2")
+    });
+  </script>
+</body>
+
+</html>
